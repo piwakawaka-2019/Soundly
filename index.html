@@ -5,11 +5,34 @@
     <title>Soundly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="index.css" rel="stylesheet" />
-  </head>
+
+    <script type="text/javascript" src="paper-full.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+
+    var circles = [];
+
+    function onKeyDown(event) {
+      var maxPoint = new Point(view.size.width, view.size.height);
+      var randomPoint = Point.random();
+      var point  = maxPoint * randomPoint;
+      console.log(maxPoint)
+      var newCircle = new Path.Circle(point, 500 )
+      newCircle.fillColor = "purple";
+     circles.push(newCircle);
+    }
+    
+    function onFrame(event){
+      for(var i = 0; i < circles.length; i++){
+        circles[i].fillColor.hue += 1;
+        circles[i].scale(.9);
+      } 
+    }
+  </script>
+  
+</head>
   <body>
-    <main>
-      <h1>Soundly</h1>
-    </main>
+      <canvas id="myCanvas" resize></canvas>
+   
     <script src="bundle.js"></script>
   </body>
 </html>
