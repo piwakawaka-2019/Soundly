@@ -9,33 +9,141 @@
     <script type="text/javascript" src="paper-full.js"></script>
     <script type="text/paperscript" canvas="myCanvas">
 
-    var circles = [];
+      var keyData = {
 
-    function onKeyDown(event) {
-      var maxPoint = new Point(view.size.width, view.size.height);
-      var randomPoint = Point.random();
-      var point  = maxPoint * randomPoint;
-      console.log(maxPoint)
-      var newCircle = new Path.Circle(point, 500 )
-      newCircle.fillColor = "purple";
-     circles.push(newCircle);
+        q: {
+            color: '#1abc9c'
+        },
+        w: {
+           
+            color: '#2ecc71'
+        },
+        e: {
+           
+            color: '#3498db'
+        },
+        r: {
+           
+            color: '#9b59b6'
+        },
+            t: {
+          
+            color: '#34495e'
+        },
+        y: {
+           
+            color: '#16a085'
+        },
+        u: {
+         
+            color: '#27ae60'
+        },
+        i: {
+         
+            color: '#2980b9'
+        },
+        o: {
+     
+            color: '#8e44ad'
+        },
+        p: {
+          
+            color: '#2c3e50'
+        },
+        a: {
+           
+            color: '#f1c40f'
+        },
+        s: {
+           
+            color: '#e67e22'
+        },
+            d: {
+        
+            color: '#e74c3c'
+        },
+        f: {
+       
+            color: '#95a5a6'
+        },
+        g: {
+       
+            color: '#f39c12'
+        },
+        h: {
+        
+            color: '#d35400'
+        },
+        j: {
+     
+            color: '#1abc9c'
+        },
+        k: {
+      
+            color: '#2ecc71'
+        },
+        l: {
+     
+            color: '#3498db'
+        },
+        z: {
+  
+            color: '#9b59b6'
+        },
+        x: {
+           
+            color: '#34495e'
+        },
+        c: {
+  
+            color: '#16a085'
+        },
+        v: {
+   
+            color: '#27ae60'
+        },
+        b: {
+  
+            color: '#2980b9'
+        },
+        n: {
+  
+            color: '#8e44ad'
+        },
+        m: {
+   
+            color: '#2c3e50'
+        }
     }
-    
+  
+    var circles = [];
+  
+    function onKeyDown(event) {
+        if(keyData[event.key]){
+            var maxPoint = new Point(view.size.width, view.size.height);
+            var randomPoint = Point.random();
+            var point = maxPoint * randomPoint;
+            var newCircle = new Path.Circle(point, 500)
+            newCircle.fillColor = keyData[event.key].color;
+            circles.push(newCircle);
+        }
+    }
+  
     function onFrame(event){
-      for(var i = 0; i < circles.length; i++){
-        circles[i].fillColor.hue += 1;
-        circles[i].scale(.9);
-      } 
+        for(var i = 0; i < circles.length; i++){
+            circles[i].fillColor.hue += 1;
+            circles[i].scale(.9);
+        }
     }
   </script>
   
 </head>
 
-<main></main>
-  <body id="body">
+
+<body id="body">
 
       <canvas id="myCanvas" resize></canvas>
-   
+      <main></main>
    
     <script src="bundle.js"></script>
   </body>

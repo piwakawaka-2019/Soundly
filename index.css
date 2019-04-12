@@ -1,3 +1,9 @@
+* {
+  margin:0;
+}
+
+
+
 body, html {
   height:100%;
   width: 100%;
@@ -6,6 +12,33 @@ body, html {
 
 canvas{
   width:100%;
-  background: black;
+  height:100%;
+  background:#D7C9C1;
+  z-index: -1;
+  position:absolute;
+  align-content: centre
+}
 
+img {
+  width:300px;
+  
+  position:absolute;
+  top:50%;
+  left:50%;
+  display: block;
+  z-index: 10;
+}
+
+#key-image {
+  align-content: centre;
+  display: inline-block;
+  flex-direction: column;
+  animation-name: spin;
+  animation-duration: 2s;qw
+  animation-fill-mode: both;
+}
+
+@keyframes spin{
+  from{transform: scale(0) rotateZ(-360deg)}
+  to{transform: scale(1) rotateZ(0deg)}
 }
