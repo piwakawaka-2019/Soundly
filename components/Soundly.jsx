@@ -40,6 +40,7 @@ class Soundly extends React.Component {
         return (
             <div onKeyDown={this.keyDownHandler} style={this.state.style} className="soundlet" id={this.props.id}>
                 <img src ={this.state.image}/>
+                <audio src={this.state.audio} type="audio/wav" autoPlay random={this.state.random} />
             </div>)
     }
 }
