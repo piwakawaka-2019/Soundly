@@ -1,11 +1,19 @@
 import React from 'react'
+import { BADQUERY } from 'dns';
+
+let images = {
+    "a": "apple",
+    "b": "bear",
+    "c": "coconut"
+}
 
 class Soundly extends React.Component {
 
     constructor(props){
         super(props)
         this.state = {
-            letterToDisplay: '',
+            keyPushed: '',
+            image: '',
             style: {
                 height: '250px',
                 width: '300px',
@@ -21,14 +29,17 @@ class Soundly extends React.Component {
 
     keyDownHandler = evt => {
         this.setState({
-            letterToDisplay: event.key
-    })}
+            keyPushed: event.key,
+            image: "../images/" + images[event.key] + ".png"
+        })
+        console.log(this.state.image)
+    }
     
 
     render(){
         return (
             <div onKeyDown={this.keyDownHandler} style={this.state.style} className="soundlet" id={this.props.id}>
-                {this.state.letterToDisplay}
+                <img src ={this.state.image}/>
             </div>)
     }
 }
