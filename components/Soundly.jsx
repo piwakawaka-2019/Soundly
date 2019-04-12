@@ -1,6 +1,11 @@
 import React from 'react'
+import { BADQUERY } from 'dns';
 
-
+let images = {
+    "a": "apple",
+    "b": "bear",
+    "c": "coconut"
+}
 
 class Soundly extends React.Component {
 
@@ -25,7 +30,7 @@ class Soundly extends React.Component {
     keyDownHandler = evt => {
         this.setState({
             keyPushed: event.key,
-            image: "../images/" + event.key + ".png"
+            image: "../images/" + images[event.key] + ".png"
         })
         console.log(this.state.image)
     }
