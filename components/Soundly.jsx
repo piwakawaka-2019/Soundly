@@ -1,10 +1,9 @@
 import React from 'react'
-import { BADQUERY } from 'dns';
 
 let images = {
-    "a": "apple",
-    "b": "bear",
-    "c": "coconut"
+    "a": ["apple", "sound (1)"],
+    "b": ["bear", "sound (2)"],
+    "c": ["coconut", "sound (3)"]
 }
 
 class Soundly extends React.Component {
@@ -14,6 +13,7 @@ class Soundly extends React.Component {
         this.state = {
             keyPushed: '',
             image: '',
+            audio: '',
             style: {
                 height: '250px',
                 width: '300px',
@@ -30,15 +30,15 @@ class Soundly extends React.Component {
     keyDownHandler = evt => {
         this.setState({
             keyPushed: event.key,
-            image: "../images/" + images[event.key] + ".png"
+            image: "/images/" + images[event.key][0] + ".png",
+            audio: "/sounds/" + images[event.key][1] + ".wav",
         })
-        console.log(this.state.image)
     }
     
 
     render(){
         return (
-            <div onKeyDown={this.keyDownHandler} style={this.state.style} className="soundlet" id={this.props.id}>
+            <div style={this.state.style} id="soundly">
                 <img src ={this.state.image}/>
                 <audio src={this.state.audio} type="audio/wav" autoPlay random={this.state.random} />
             </div>)
