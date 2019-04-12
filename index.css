@@ -7,7 +7,6 @@
 body, html {
   height:100%;
   width: 100%;
-
 }
 
 canvas{
@@ -21,10 +20,9 @@ canvas{
 
 img {
   width:300px;
-  
   position:absolute;
-  top:50%;
-  left:50%;
+  top:30%;
+  left:40%;
   display: block;
   z-index: 10;
 }
@@ -34,11 +32,12 @@ img {
   display: inline-block;
   flex-direction: column;
   animation-name: spin;
-  animation-duration: 2s;qw
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
   animation-fill-mode: both;
 }
 
 @keyframes spin{
-  from{transform: scale(0) rotateZ(-360deg)}
+  from{transform:  scale(0.5) rotateZ(-360deg)}
   to{transform: scale(1) rotateZ(0deg)}
 }

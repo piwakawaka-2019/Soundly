@@ -12,7 +12,7 @@
       var keyData = {
 
         q: {
-            color: '#1abc9c'
+            color: '#D9716F'
         },
         w: {
            
@@ -24,11 +24,11 @@
         },
         r: {
            
-            color: '#9b59b6'
+            color: '#ff5394'
         },
             t: {
           
-            color: '#34495e'
+            color: '#3e3e47'
         },
         y: {
            
@@ -123,7 +123,8 @@
             var maxPoint = new Point(view.size.width, view.size.height);
             var randomPoint = Point.random();
             var point = maxPoint * randomPoint;
-            var newCircle = new Path.Circle(point, 500)
+
+            var newCircle = Math.floor(Math.random() * 2) ? new Path.Circle(point, 500):new Path.Rectangle(point, 500)
             newCircle.fillColor = keyData[event.key].color;
             circles.push(newCircle);
         }
