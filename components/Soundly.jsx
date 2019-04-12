@@ -18,7 +18,7 @@ let images = {
     "q": ["Seashell", "sound (15)"],
     "r": ["Seashells", "sound (16)"],
     "s": ["water", "sound (17)"],
-    "t": ["Lilies", "sound (18)"],
+    "t": ["Lilies1", "sound (18)"],
     "u": ["Lilies2", "sound (19)"],
     "v": ["wig1", "sound (20)"],
     "w": ["wig2", "sound (21)"],
